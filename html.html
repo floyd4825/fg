@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Technician Level Six Course</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e7f0 50%, #b8d9e8 100%);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c5f8d 0%, #3d7bb3 100%);
+            color: #fff;
+            padding: 2em 1em;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+        }
+
+        .logo {
+            height: 80px;
+            width: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .feature-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin: 2em auto;
+            display: block;
+        }
+        
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1.2em;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5em;
+        }
+        
+        nav li {
+            display: inline-block;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #2c5f8d;
+            font-weight: 600;
+            padding: 0.5em 1.2em;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #3d7bb3 0%, #2c5f8d 100%);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3em 2em;
+        }
+        
+        section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5em;
+            margin-bottom: 2em;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            color: #2c5f8d;
+            margin-bottom: 1em;
+            font-size: 2em;
+            border-bottom: 3px solid #3d7bb3;
+            padding-bottom: 0.5em;
+        }
+
+        section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1em;
+        }
+
+        section ul:not([style*="square"]) {
+            list-style: none;
+            padding: 0;
+        }
+
+        section ul:not([style*="square"]) li {
+            margin-bottom: 1em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        section ul:not([style*="square"]) li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3d7bb3;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        section ul[style*="square"] li,
+        section ol li {
+            margin-bottom: 0.8em;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        section a {
+            color: #3d7bb3;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        section a:hover {
+            color: #2c5f8d;
+            text-decoration: underline;
+        }
+
+        #home {
+            background: linear-gradient(135deg, rgba(61, 123, 179, 0.1) 0%, rgba(44, 95, 141, 0.1) 100%);
+        }
+
+        #home h2 {
+            color: #2c5f8d;
+            font-size: 2.2em;
+        }
+
+        #home .ict-explanation {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #2c5f8d;
+            line-height: 1.9;
+            padding: 1.5em;
+            background: linear-gradient(135deg, rgba(61, 123, 179, 0.15) 0%, rgba(44, 95, 141, 0.15) 100%);
+            border-left: 5px solid #3d7bb3;
+            border-radius: 10px;
+            margin: 1.5em 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #2c5f8d 0%, #3d7bb3 100%);
+            color: #fff;
+            padding: 2em;
+            text-align: center;
+            margin-top: 3em;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 0.5em;
+            }
+
+            .logo {
+                height: 60px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5em;
+            }
+
+            main {
+                padding: 2em 1em;
+            }
+
+            section {
+                padding: 1.5em;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+
+            .feature-image {
+                margin: 1em auto;
+            }
+
+            #home .ict-explanation {
+                font-size: 1.1em;
+                padding: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="logo.jpeg" alt="Logo" class="logo">
+        <h1>ICT Technician Level Six Course</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="html.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>ICT Technician Level Six</h2>
+            <p class="ict-explanation">The ICT Technician Level Six course is designed to provide students with comprehensive knowledge and practical skills in information and communication technology. This course prepares students for careers in IT support, technical services, and various technology-related fields by covering essential topics including digital literacy, communication skills, electronics, website design, mobile applications, computer maintenance, and cybersecurity.</p>
+            <img src="fg.jpeg" alt="ICT Technician Course" class="feature-image">
+        </section>
+        
+        <section>
+            <h2>Basic Units</h2>
+            <ul style="list-style-type: square; padding-left: 2em;">
+                <li>Digital literacy</li>
+                <li>Communication skills</li>
+                <li>Employability skills</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Common unit</h2>
+            <ol start="3" style="padding-left: 2em;">
+                <li>Basic electronics</li>
+            </ol>
+        </section>
+        
+        <section>
+            <h2>Core units</h2>
+            <ol type="i" style="padding-left: 2em;">
+                <li>Website design</li>
+                <li>Mobile application</li>
+                <li>Computer Repair and Maintenance</li>
+                <li>ICT threats</li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ICT Technician Level Six Course. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
